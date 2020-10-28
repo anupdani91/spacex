@@ -1,0 +1,92 @@
+<div class="app-header"><h1>SpaceEx Launch programs</h1></div>
+<main class="main-container">
+  <div class="launch-filters">
+    <h2>Filters</h2>
+    <section class="filter-category">
+      <h3 class="filter-type">Launch Year</h3>
+      <div class="filter-values">
+        <button
+          class="filter-item"
+          [ngClass]="{ active: selectedYearValue == year }"
+          *ngFor="let year of yearsFilter"
+          (click)="applyYearFilter(year)"
+        >
+          {{ year }}
+        </button>
+      </div>
+    </section>
+    <section class="filter-category">
+      <h3 class="filter-type">Successful Launch</h3>
+      <div class="filter-values">
+        <button
+          [ngClass]="{ active: selectedLaunchValue == true }"
+          class="filter-item"
+          (click)="applyLaunchFilter(true)"
+        >
+          true</button
+        ><button
+          [ngClass]="{ active: selectedLaunchValue == false }"
+          class="filter-item"
+          (click)="applyLaunchFilter(false)"
+        >
+          false
+        </button>
+      </div>
+    </section>
+    <section class="filter-category">
+      <h3 class="filter-type">Successful Landing</h3>
+      <div class="filter-values">
+        <button
+          [ngClass]="{ active: selectedLandingValue == true }"
+          class="filter-item"
+          (click)="applyLadingFilter(true)"
+        >
+          true</button
+        ><button
+          [ngClass]="{ active: selectedLandingValue == false }"
+          class="filter-item"
+          (click)="applyLadingFilter(false)"
+        >
+          false
+        </button>
+      </div>
+    </section>
+  </div>
+  <div class="launch-list">
+    <div class="launch-item" *ngFor="let launchProgram of launchPrograms">
+      <figure class="figure-item">
+        <img alt="FalconSat" [src]="launchProgram.links.mission_patch_small" />
+      </figure>
+      <p class="launch-name">
+        {{ launchProgram.mission_name }}#{{ launchProgram.flight_number }}
+      </p>
+      <div class="launch-detail type-list">
+        <p class="detail-label">Mission Ids:</p>
+        <ul class="detail-value">
+          <li *ngIf="launchProgram.mission_id.length === 0">NA</li>
+          <li *ngFor="let missionId of launchProgram.mission_id">
+            {{ missionId }}
+          </li>
+        </ul>
+      </div>
+      <div class="launch-detail">
+        <p class="detail-label">Launch Year:</p>
+        <p class="detail-value">{{ launchProgram.launch_year }}</p>
+      </div>
+      <div class="launch-detail">
+        <p class="detail-label">Successful Launch:</p>
+        <p class="detail-value">{{ launchProgram.launch_success }}</p>
+      </div>
+      <div class="launch-detail">
+        <p class="detail-label">Successful Landing:</p>
+        <p class="detail-value">
+          <span *ngIf="launchProgram.launch_landing">{{
+            launchProgram.launch_landing
+          }}</span>
+          <span *ngIf="!launchProgram.launch_landing">NA</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">Developed by: Anup Dani</footer>
