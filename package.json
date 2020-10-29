@@ -6,7 +6,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng run spacex:server:production"
     "build": "ng build --prod --output-hashing=none && npm run concat",
     "test": "ng test",
     "lint": "ng lint",
