@@ -7,7 +7,6 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "concat": "./concat-builds.js",
     "build": "ng build --prod --output-hashing=none && npm run concat",
     "test": "ng test",
     "lint": "ng lint",
