@@ -2,12 +2,12 @@
   "name": "spacex",
   "version": "0.0.0",
   "engines": {
-    "node": "10.x",
-    "npm":"6.14.6"
+    "node": "10.22.1",
+    "npm": "6.14.6"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng run spacex:server:production"
+    "start": "node server.js",
     "build": "ng build --prod --output-hashing=none && npm run concat",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,8 +23,10 @@
     "@angular/cli": "~9.1.6",
     "@angular/compiler-cli": "~9.1.7",
     "@angular/animations": "~9.1.7",
+    "@angular/cli": "~9.1.6",
     "@angular/common": "~9.1.7",
     "@angular/compiler": "~9.1.7",
+    "@angular/compiler-cli": "~9.1.7",
     "@angular/core": "~9.1.7",
     "@angular/forms": "~9.1.7",
     "@angular/platform-browser": "~9.1.7",
@@ -33,9 +35,10 @@
     "@angular/router": "~9.1.7",
      "typescript": "~3.8.3",
     "@nguniversal/express-engine": "^9.1.1",
-    "express": "^4.15.2",
+    "express": "^4.17.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "typescript": "~3.8.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -55,6 +58,6 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0"   
+    "tslint": "~6.1.0"
   }
 }
